@@ -1,254 +1,117 @@
-# 🐦 Twitter (X) Sentiment Analyzer
+# 🐦 Twitter Sentiment Analyzer
 
-أداة تحليل مشاعر احترافية للتغريدات باستخدام Python وStreamlit
+A professional sentiment analysis tool for Twitter (X) with multi-language support and interactive visualizations.
 
-## 📋 نظرة عامة
+![Python](https://img.shields.io/badge/python-3.8+-blue.svg)
+![License](https://img.shields.io/badge/license-MIT-green.svg)
+![Streamlit](https://img.shields.io/badge/streamlit-1.28+-red.svg)
 
-محلل مشاعر تويتر هو تطبيق ويب تفاعلي يسمح لك بتحليل مشاعر التغريدات في الوقت الفعلي. يدعم التطبيق اللغتين العربية والإنجليزية ويوفر رسوماً بيانية تفاعلية وإحصائيات مفصلة.
+## ✨ Key Features
 
-### ✨ المميزات
+- 🌍 **Multi-language UI** - English & Arabic interface
+- 🔍 **Flexible Search** - Keywords or hashtags
+- 🤖 **Dual Analysis** - TextBlob & VADER engines
+- 📊 **Interactive Charts** - Real-time Plotly visualizations
+- ⏱️ **Smart Timeout** - Automatic timeout (30-120s)
+- 📈 **Timeline Analysis** - Sentiment evolution tracking
+- 💾 **Export** - Download results as CSV
 
-- 🔍 **بحث متعدد**: البحث بكلمات مفتاحية أو هاشتاغات
-- 🤖 **تحليل ذكي**: استخدام TextBlob وVADER لتحليل دقيق
-- 📊 **رسوم تفاعلية**: رسوم بيانية احترافية باستخدام Plotly
-- 🌍 **دعم متعدد اللغات**: عربي وإنجليزي
-- 📈 **تحليل زمني**: تتبع تطور المشاعر عبر الوقت
-- 💾 **تصدير سهل**: حفظ النتائج بصيغة CSV
-- 🎨 **واجهة جميلة**: واجهة مستخدم عصرية وسهلة الاستخدام
+## 🚀 Quick Start
 
-## 🚀 التثبيت والإعداد
-
-### المتطلبات الأساسية
-
-- Python 3.8 أو أحدث
-- حساب Twitter Developer مع مفاتيح API
-
-### خطوات التثبيت
-
-1. **استنساخ المشروع أو تحميله**
 ```bash
-cd twitter-sentiment-analyzer
-```
-
-2. **إنشاء بيئة افتراضية (موصى به)**
-```bash
-python -m venv venv
-
-# على Linux/Mac
-source venv/bin/activate
-
-# على Windows
-venv\Scripts\activate
-```
-
-3. **تثبيت المكتبات المطلوبة**
-```bash
+# Install dependencies
 pip install -r requirements.txt
-```
 
-4. **إعداد مفاتيح Twitter API**
+# Setup environment
+cp .env.example .env
+# Add your Twitter API keys to .env
 
-   أ. احصل على مفاتيح API من [Twitter Developer Portal](https://developer.twitter.com/en/portal/dashboard)
-
-   ب. انسخ ملف `.env.example` إلى `.env`
-   ```bash
-   cp .env.example .env
-   ```
-
-   ج. افتح ملف `.env` وأضف مفاتيحك:
-   ```env
-   TWITTER_API_KEY=your_api_key_here
-   TWITTER_API_SECRET=your_api_secret_here
-   TWITTER_ACCESS_TOKEN=your_access_token_here
-   TWITTER_ACCESS_TOKEN_SECRET=your_access_token_secret_here
-   TWITTER_BEARER_TOKEN=your_bearer_token_here
-   ```
-
-5. **تشغيل التطبيق**
-```bash
+# Run application
 streamlit run app.py
 ```
 
-سيفتح التطبيق تلقائياً في المتصفح على `http://localhost:8501`
+Visit `http://localhost:8501` in your browser.
 
-## 📖 كيفية الاستخدام
+## 📖 Usage
 
-### 1. اختيار نوع البحث
-- **كلمة مفتاحية**: ابحث عن أي كلمة أو عبارة في التغريدات
-- **هاشتاغ**: ابحث عن تغريدات تحتوي على هاشتاغ محدد
+1. Choose language (English/Arabic)
+2. Select search type (Keyword/Hashtag)
+3. Enter search query
+4. Configure tweet count & language
+5. Click "Start Analysis"
+6. Explore results & download data
 
-### 2. إدخال البحث
-- أدخل الكلمة أو الهاشتاغ المراد تحليله
-- مثال: "الذكاء الاصطناعي" أو "#AI"
+## 🔑 Twitter API Setup
 
-### 3. تحديد الإعدادات
-- **عدد التغريدات**: من 50 إلى 1000 تغريدة
-- **اللغة**: العربية، الإنجليزية، أو الكل
-- **طريقة التحليل**:
-  - TextBlob (أسرع)
-  - VADER (متوازن)
-  - كلاهما (أدق)
+1. Go to [Twitter Developer Portal](https://developer.twitter.com/en/portal/dashboard)
+2. Create a new project & app
+3. Generate API keys
+4. Add keys to `.env` file:
 
-### 4. عرض النتائج
-بعد الضغط على "ابدأ التحليل"، ستحصل على:
+```env
+TWITTER_API_KEY=your_key_here
+TWITTER_API_SECRET=your_secret_here
+TWITTER_ACCESS_TOKEN=your_token_here
+TWITTER_ACCESS_TOKEN_SECRET=your_token_secret_here
+TWITTER_BEARER_TOKEN=your_bearer_token_here
+```
 
-- **إحصائيات سريعة**: أعداد ونسب المشاعر
-- **رسم دائري**: توزيع المشاعر (إيجابي/سلبي/محايد)
-- **رسم عمودي**: أكثر الكلمات تكراراً
-- **رسم زمني**: تطور المشاعر عبر الوقت
-- **جدول التغريدات**: عرض وتصفية التغريدات المحللة
-- **تصدير**: تحميل النتائج بصيغة CSV
+## 📊 Analysis Methods
 
-## 🏗️ هيكل المشروع
+| Method | Speed | Best For | Accuracy |
+|--------|-------|----------|----------|
+| TextBlob | ⚡ Fast | General use | Good |
+| VADER | 🚀 Medium | Social media | Very Good |
+| Both | 🐢 Slower | Critical analysis | Excellent |
+
+## 🛠️ Project Structure
 
 ```
 twitter-sentiment-analyzer/
-├── .streamlit/
-│   └── config.toml              # إعدادات Streamlit
+├── app.py                 # Main Streamlit app
 ├── config/
-│   ├── __init__.py
-│   └── settings.py              # الإعدادات العامة
+│   ├── settings.py       # Configuration
+│   └── translations.py   # Multi-language support
 ├── src/
-│   ├── __init__.py
-│   ├── data_fetcher.py          # جلب البيانات من Twitter
-│   ├── text_cleaner.py          # تنظيف النصوص
-│   ├── sentiment_analyzer.py    # تحليل المشاعر
-│   └── visualizer.py            # الرسوم البيانية
-├── utils/
-│   ├── __init__.py
-│   ├── error_handler.py         # إدارة الأخطاء
-│   └── logger.py                # السجلات
-├── tests/
-│   └── test_sample.py           # الاختبارات
-├── output/                      # المخرجات المحفوظة
-├── app.py                       # التطبيق الرئيسي
-├── requirements.txt             # المكتبات المطلوبة
-├── .env.example                 # نموذج المتغيرات البيئية
-├── .gitignore
-└── README.md
+│   ├── data_fetcher.py   # Twitter API integration
+│   ├── text_cleaner.py   # Text preprocessing
+│   ├── sentiment_analyzer.py  # Analysis engine
+│   └── visualizer.py     # Charts & visualizations
+└── utils/
+    ├── error_handler.py  # Error management
+    └── logger.py         # Logging system
 ```
 
-## 🔧 المكونات الرئيسية
+## 📝 Requirements
 
-### 1. data_fetcher.py
-- الاتصال بـ Twitter API v2
-- جلب التغريدات بناءً على البحث
-- معالجة حدود API وإدارة الأخطاء
+- Python 3.8+
+- Twitter Developer Account
+- Dependencies in `requirements.txt`
 
-### 2. text_cleaner.py
-- تنظيف النصوص من URLs والـ mentions
-- توحيد الأحرف العربية
-- إزالة stop words
-- استخراج الكلمات المفتاحية
+## 🤝 Contributing
 
-### 3. sentiment_analyzer.py
-- تحليل المشاعر باستخدام TextBlob
-- تحليل المشاعر باستخدام VADER
-- حساب الإحصائيات
-- تحليل التطور الزمني
+Contributions welcome! See [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines.
 
-### 4. visualizer.py
-- رسوم دائرية تفاعلية
-- رسوم عمودية للكلمات
-- رسوم زمنية
-- دعم كامل للنصوص العربية
+**Priority areas:**
+- Improve Arabic sentiment accuracy
+- Add more languages
+- Implement deep learning models
+- Enhance visualizations
 
-## 📊 طرق التحليل
+## 📄 License
 
-### TextBlob
-- سريع وبسيط
-- مناسب للاستخدام العام
-- دقة جيدة مع النصوص الإنجليزية
+MIT License - see [LICENSE](LICENSE) file.
 
-### VADER (Valence Aware Dictionary and sEntiment Reasoner)
-- متخصص في نصوص وسائل التواصل الاجتماعي
-- يتعامل بشكل أفضل مع الرموز التعبيرية
-- دقة عالية مع النصوص الإنجليزية
+## 🙏 Acknowledgments
 
-### كلاهما
-- يجمع بين الطريقتين
-- أدق النتائج
-- أبطأ قليلاً في المعالجة
+Built with: [Tweepy](https://www.tweepy.org/) • [Streamlit](https://streamlit.io/) • [Plotly](https://plotly.com/) • [TextBlob](https://textblob.readthedocs.io/) • [VADER](https://github.com/cjhutto/vaderSentiment)
 
-## 🎯 الأداء والحدود
+## 📈 Version
 
-- **معدل التحليل**: ~100 تغريدة في أقل من دقيقتين
-- **حدود API**: 450 طلب كل 15 دقيقة
-- **الدقة المتوقعة**: +70% مقارنة بالتصنيف البشري
-- **الحد الأقصى للتغريدات**: 1000 تغريدة لكل بحث
-
-## 🔐 الأمان والخصوصية
-
-- ملف `.env` مستثنى من Git (لا يتم رفعه)
-- جميع المفاتيح محلية على جهازك
-- لا يتم حفظ أو مشاركة بيانات المستخدمين
-- الالتزام بسياسات Twitter API
-
-## 🐛 استكشاف الأخطاء
-
-### خطأ المصادقة (401)
-- تأكد من صحة مفاتيح API في ملف `.env`
-- تحقق من أن المفاتيح نشطة في Twitter Developer Portal
-
-### تجاوز الحد (429)
-- انتظر 15 دقيقة قبل إعادة المحاولة
-- قلل عدد التغريدات المطلوبة
-
-### لم يتم العثور على تغريدات
-- جرب كلمة بحث أخرى
-- غيّر إعدادات اللغة
-- تأكد من أن الموضوع حديث ونشط
-
-### مشاكل في عرض النصوص العربية
-- تأكد من تثبيت `arabic-reshaper` و `python-bidi`
-- أعد تشغيل التطبيق
-
-## 📈 التطويرات المستقبلية (المرحلة 2 و 3)
-
-- [ ] إضافة تحليل حسابات محددة
-- [ ] تحليل تفاعلات تغريدة واحدة
-- [ ] دعم فترات زمنية مخصصة
-- [ ] إضافة نماذج Deep Learning
-- [ ] تحسين دقة التحليل للعربية
-- [ ] إضافة كشف الموضوعات (Topic Modeling)
-- [ ] دعم تحليل الصور والفيديو
-- [ ] نظام تقارير PDF تلقائي
-- [ ] API RESTful للتكامل
-- [ ] Deployment على السحابة
-
-## 🤝 المساهمة
-
-المساهمات مرحب بها! إذا كنت تريد المساهمة:
-
-1. Fork المشروع
-2. أنشئ branch جديد (`git checkout -b feature/amazing-feature`)
-3. Commit التغييرات (`git commit -m 'Add amazing feature'`)
-4. Push إلى Branch (`git push origin feature/amazing-feature`)
-5. افتح Pull Request
-
-## 📝 الترخيص
-
-هذا المشروع مفتوح المصدر ومتاح للاستخدام التعليمي والبحثي.
-
-## 📞 الدعم والتواصل
-
-إذا واجهت أي مشاكل أو لديك اقتراحات:
-- افتح Issue في GitHub
-- راجع ملف التوثيق
-- تحقق من سجلات التطبيق في مجلد `logs/`
-
-## 🙏 شكر وتقدير
-
-المكتبات والأدوات المستخدمة:
-- [Tweepy](https://www.tweepy.org/) - Twitter API wrapper
-- [Streamlit](https://streamlit.io/) - إطار التطبيق
-- [Plotly](https://plotly.com/) - الرسوم البيانية
-- [TextBlob](https://textblob.readthedocs.io/) - معالجة النصوص
-- [VADER](https://github.com/cjhutto/vaderSentiment) - تحليل المشاعر
-- [Pandas](https://pandas.pydata.org/) - معالجة البيانات
+**v1.1.0** - Multi-language support, smart timeout, progress indicators
 
 ---
 
-**تم بناء المشروع بواسطة Claude Code - المرحلة الأولى v1.0**
+⭐ **Star this repo if you find it useful!**
 
-صنع بـ ❤️ للمجتمع العربي والعالمي
+Made with ❤️ for the global community

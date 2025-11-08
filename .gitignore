@@ -21,6 +21,18 @@
 *credentials*
 !.env.example
 
+# Internal documentation (not for public)
+GITHUB_PUBLISH_GUIDE.md
+PRE_PUBLISH_CHECKLIST.md
+Untitled*
+docs-ar/
+
+# Hidden directories (except .streamlit/config.toml)
+.*/
+!.streamlit/
+.streamlit/*
+!.streamlit/config.toml
+
 # ========================================
 # Python
 # ========================================
