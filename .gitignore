@@ -22,6 +22,7 @@
 !.env.example
 
 # Internal documentation (not for public)
+CHANGELOG.md
 GITHUB_PUBLISH_GUIDE.md
 PRE_PUBLISH_CHECKLIST.md
 Untitled*
@@ -32,6 +33,9 @@ docs-ar/
 !.streamlit/
 .streamlit/*
 !.streamlit/config.toml
+
+# Don't publish .gitignore itself
+.gitignore
 
 # ========================================
 # Python
