@@ -1,0 +1,191 @@
+# ========================================
+# SENSITIVE FILES - NEVER COMMIT!
+# ========================================
+# Environment variables with API keys
+.env
+.env.local
+.env.*.local
+*.env
+
+# Backup files that might contain sensitive data
+.env.backup
+.env copy
+*.backup
+
+# Streamlit secrets
+.streamlit/secrets.toml
+
+# Any file with "secret" or "key" in name
+*secret*
+*key*
+*credentials*
+!.env.example
+
+# ========================================
+# Python
+# ========================================
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+pip-wheel-metadata/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# PyInstaller
+*.manifest
+*.spec
+
+# Installer logs
+pip-log.txt
+pip-delete-this-directory.txt
+
+# ========================================
+# Virtual Environments
+# ========================================
+venv/
+ENV/
+env/
+.venv
+env.bak/
+venv.bak/
+
+# ========================================
+# IDEs and Editors
+# ========================================
+# VSCode
+.vscode/
+*.code-workspace
+
+# PyCharm
+.idea/
+*.iml
+*.iws
+
+# Sublime Text
+*.sublime-project
+*.sublime-workspace
+
+# Vim
+*.swp
+*.swo
+*~
+
+# Emacs
+\#*\#
+.\#*
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Windows
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+ehthumbs_vista.db
+Desktop.ini
+
+# Linux
+*~
+
+# ========================================
+# Project Specific
+# ========================================
+# Output files
+output/*.png
+output/*.csv
+output/*.json
+output/*.xlsx
+output/*.pdf
+
+# Log files
+*.log
+logs/
+*.log.*
+
+# Temporary files
+tmp/
+temp/
+*.tmp
+
+# Cache
+.cache/
+*.cache
+
+# ========================================
+# Testing
+# ========================================
+# pytest
+.pytest_cache/
+.coverage
+.coverage.*
+htmlcov/
+.tox/
+.nox/
+coverage.xml
+*.cover
+.hypothesis/
+
+# Jupyter Notebook
+.ipynb_checkpoints
+*.ipynb
+
+# ========================================
+# Documentation
+# ========================================
+# Sphinx documentation
+docs/_build/
+docs/_static/
+docs/_templates/
+
+# mkdocs
+site/
+
+# ========================================
+# Database
+# ========================================
+*.db
+*.sqlite
+*.sqlite3
+
+# ========================================
+# OS Generated
+# ========================================
+.directory
+.Trash-*
+
+# ========================================
+# Project Specific Ignores
+# ========================================
+# Don't commit user-specific data
+user_data/
+downloads/
+temp_analysis/
+
+# Don't commit large model files (if added later)
+models/*.h5
+models/*.pkl
+models/*.joblib
+*.model
+
+# Don't commit test outputs
+test_output/
+test_results/

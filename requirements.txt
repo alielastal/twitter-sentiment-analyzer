@@ -1,0 +1,25 @@
+# Twitter API
+tweepy>=4.14.0
+
+# تحليل المشاعر
+textblob>=0.17.1
+vaderSentiment>=3.3.2
+
+# معالجة البيانات
+pandas>=2.0.0
+numpy>=1.24.0
+
+# التصورات
+plotly>=5.17.0
+streamlit>=1.28.0
+
+# معالجة النصوص العربية
+arabic-reshaper>=3.0.0
+python-bidi>=0.4.2
+
+# أدوات مساعدة
+python-dotenv>=1.0.0
+requests>=2.31.0
+
+# تحسينات Streamlit (اختياري)
+streamlit-option-menu>=0.3.6
